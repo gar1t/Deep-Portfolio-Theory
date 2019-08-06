@@ -1,0 +1,19 @@
+retrack:
+  description: Select a subset of stocks from IBB Index to re-track Index
+  requires:
+    - file: data
+  pre-process: mkdir model plots
+  flags-import-skip: [encoding_dim, which_stock]
+  flags:
+    encode_epochs: 500
+    calibrate_epochs: 500
+    verify_epochs: 500
+    nc_min: 5
+    nc_max: 79
+
+beat:
+  description: Select a subset of stocks from IBB Index to beat Index
+  pre-process: mkdir model plots
+  requires:
+    - file: data
+  flags-import-skip: [encoding_dim, which_stock]
